@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Admin Panel - Giga SEA LMS</title>
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    /* Custom Styling for the Page */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3f4f6; /* Light gray background */
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #2a9d8f; /* Teal Header */
+        color: #ffffff;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    header a:hover {
+        color: #e9c46a; /* Golden hover */
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .card {
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        padding: 30px;
+        background-color: #ffffff;
+    }
+
+    .btn-primary {
+        background-color: #264653; /* Dark Blue */
+        border-color: #264653;
+    }
+
+    .btn-primary:hover {
+        background-color: #2a9d8f; /* Teal */
+        border-color: #2a9d8f;
+    }
+
+    .btn-danger {
+        background-color: #e76f51; /* Coral */
+        border-color: #e76f51;
+    }
+
+    .btn-danger:hover {
+        background-color: #f4a261; /* Orange */
+        border-color: #f4a261;
+    }
+
+    .text-success {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    footer {
+        margin-top: 50px;
+        background-color: #2a9d8f;
+        color: #ffffff;
+        padding: 15px;
+        text-align: center;
+    }
+
+    footer p {
+        margin: 0;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="navbar-brand" href="#">
+      Giga SEA LMS - Admin Panel
+    </a>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <h2 class="text-center text-primary">Admin Panel</h2>
+    <div class="card mt-4">
+      <div class="card-body">
+        <h3 class="text-center text-secondary mb-4">Actions</h3>
+
+        <!-- Clear Data Button -->
+        <form th:action="@{/admin/clearData}" method="post">
+          <button type="submit" class="btn btn-danger mb-4">Clear All Data</button>
+        </form>
+
+        <!-- Go to Leaderboard Button -->
+        <a href="/leaderboard" class="btn btn-primary mb-4 d-block mx-auto" style="width: 50%;">Go to Students Leaderboard</a>
+
+        <!-- Display message -->
+        <p th:text="${message}" class="text-success text-center"></p>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2024 Giga SEA LMS | Contact Information | Terms of Service | Privacy Policy</p>
+</footer>
+</body>
+</html>
